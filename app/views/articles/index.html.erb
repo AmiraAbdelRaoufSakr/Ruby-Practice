@@ -1,23 +1,32 @@
 <h1>Listing articles</h1>
  
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-  </tr>
- 
-  <% @articles.each do |article| %>
+
+   <%= link_to 'New article', new_article_path , class:"btn btn-success"%>
+
+
+<table class="table">
+  <thead>
     <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Text</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @articles.each do |article| %>
+    <tr>
+      <th scope="row"><%= article.id %></th>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
+      <td>
+      <%= link_to 'Show', article_path(article), class:"btn btn-primary" %>
+      <%= link_to 'Edit', edit_article_path(article), class:"btn btn-info" %>
+      <%= link_to 'Destroy', article_path(article),class:"btn btn-danger",
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' } %> 
+      </td>
     </tr>
-  <% end %>
+     <% end %>
+  </tbody>
 </table>
-
-<%= link_to 'New article', new_article_path %>
