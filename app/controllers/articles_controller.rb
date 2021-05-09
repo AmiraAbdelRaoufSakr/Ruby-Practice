@@ -16,7 +16,10 @@ class ArticlesController < ApplicationController
       end
 
     def create
-        @article = Article.new(article_params)
+       # @article = Article.new(article_params)
+        @article = current_user.articles.create(article_params)
+
+        #@comment = @article.comments.create(comment_params.merge(user_id: current_user.id))
         if @article.save
             redirect_to @article
           else
