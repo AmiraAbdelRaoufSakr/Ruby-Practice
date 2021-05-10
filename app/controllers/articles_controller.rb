@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  load_and_authorize_resource :only => [:index]
     def index
         @articles = Article.all
          
@@ -11,6 +12,7 @@ class ArticlesController < ApplicationController
     
     def show
         @article = Article.find(params[:id])
+       # unauthorize! :read, @article
         
       end
 

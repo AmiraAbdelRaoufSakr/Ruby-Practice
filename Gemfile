@@ -62,3 +62,5 @@ gem 'devise'
 gem "active_model_serializers", "~> 0.8.0"
 #to use jwt
 gem 'jwt'
+#to use cancan gem for authorization
+gem 'cancancan'
