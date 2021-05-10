@@ -4,10 +4,10 @@ class ArticlesController < ApplicationController
          
     end
     
-    def api_index
-      @articles = Article.all
-      render json: @articles
-    end
+   # def api_index
+   #   @articles = Article.all
+   #   render json: @articles
+   # end
     
     def show
         @article = Article.find(params[:id])

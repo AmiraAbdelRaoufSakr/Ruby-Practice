@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-    before_action :authenticate_user!, except: [:api_index]
+    before_action :authenticate_user!
+    
 end

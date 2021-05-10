@@ -60,3 +60,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 #to use serializer
 gem "active_model_serializers", "~> 0.8.0"
+#to use jwt
+gem 'jwt'
