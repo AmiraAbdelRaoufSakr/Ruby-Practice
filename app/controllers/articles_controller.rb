@@ -1,10 +1,17 @@
 class ArticlesController < ApplicationController
     def index
         @articles = Article.all
-      end
+         
+    end
+    
+    def api_index
+      @articles = Article.all
+      render json: @articles
+    end
     
     def show
         @article = Article.find(params[:id])
+        
       end
 
     def new
